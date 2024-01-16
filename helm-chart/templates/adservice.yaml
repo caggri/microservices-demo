@@ -24,6 +24,10 @@ spec:
       app: {{ .Values.adService.name }}
   template:
     metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: 'true'
+        vault.hashicorp.com/role: 'internal-app'
+        vault.hashicorp.com/secretdata.txt: 'internal/data/topsecret'
       labels:
         app: {{ .Values.adService.name }}
     spec:
