@@ -49,7 +49,7 @@ hpa:
 
 adService:
   create: true
-  name: adservice
+  name: internal-app
   resources:
     requests:
       cpu: 200m
