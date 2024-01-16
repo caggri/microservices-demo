@@ -63,9 +63,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG src/cartservice/src
-        docker push $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG src/cartservice/src
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - checkoutservice
       id: build-image-checkoutservice
@@ -75,9 +75,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG src/checkoutservice
-        docker push $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG src/checkoutservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - currencyservice
       id: build-image-currencyservice
@@ -87,9 +87,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG src/currencyservice
-        docker push $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG src/currencyservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
     - name: Build, tag, and push image to Amazon ECR - emailservice
@@ -100,9 +100,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG src/emailservice
-        docker push $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG src/emailservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - frontend
       id: build-image-frontend
@@ -112,9 +112,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG src/frontend
-        docker push $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG src/frontend
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - loadgenerator
       id: build-image-loadgenerator
@@ -124,9 +124,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG src/loadgenerator
-        docker push $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG src/loadgenerator
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - paymentservice
       id: build-image-paymentservice
@@ -136,9 +136,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG src/paymentservice
-        docker push $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG src/paymentservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
     - name: Build, tag, and push image to Amazon ECR - productcatalogservice
@@ -149,9 +149,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG src/productcatalogservice
-        docker push $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG src/productcatalogservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Build, tag, and push image to Amazon ECR - recommendationservice
       id: build-image-recommendationservice
@@ -161,9 +161,9 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG src/recommendationservice
-        docker push $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG src/recommendationservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
     - name: Build, tag, and push image to Amazon ECR - shippingservice
@@ -174,6 +174,6 @@ jobs:
       run: |
         # Build a docker container and
         # push it to ECR so that it can
-        docker build -t $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG src/shippingservice
-        docker push $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG
-        echo "image=$ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG src/shippingservice
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
