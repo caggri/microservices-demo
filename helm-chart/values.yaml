@@ -42,6 +42,11 @@ seccompProfile:
   enable: false
   type: RuntimeDefault
 
+hpa:
+  adService:
+    maxReplicas: 3
+    hpaName: example-hpa
+
 adService:
   create: true
   name: adservice
