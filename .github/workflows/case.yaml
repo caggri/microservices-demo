@@ -55,125 +55,125 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY_ADSERVICE:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY_ADSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    # - name: Build, tag, and push image to Amazon ECR - cartservice
-    #   id: build-image-cartservice
-    #   env:
-    #     ECR_REPOSITORY_CARTSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG src/cartservice/src
-    #     docker push $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - cartservice
+      id: build-image-cartservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG src/cartservice/src
+        docker push $ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_CARTSERVICE/$ECR_REPOSITORY_CARTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    # - name: Build, tag, and push image to Amazon ECR - checkoutservice
-    #   id: build-image-checkoutservice
-    #   env:
-    #     ECR_REPOSITORY_CHECKOUTSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG src/checkoutservice
-    #     docker push $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - checkoutservice
+      id: build-image-checkoutservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG src/checkoutservice
+        docker push $ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_CHECKOUTSERVICE/$ECR_REPOSITORY_CHECKOUTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    # - name: Build, tag, and push image to Amazon ECR - currencyservice
-    #   id: build-image-currencyservice
-    #   env:
-    #     ECR_REPOSITORY_CURRENCYSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG src/currencyservice
-    #     docker push $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-
-    # - name: Build, tag, and push image to Amazon ECR - emailservice
-    #   id: build-image-emailservice
-    #   env:
-    #     ECR_REPOSITORY_EMAILSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG src/emailservice
-    #     docker push $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    # - name: Build, tag, and push image to Amazon ECR - frontend
-    #   id: build-image-frontend
-    #   env:
-    #     ECR_REPOSITORY_FRONTEND: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG src/frontend
-    #     docker push $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    # - name: Build, tag, and push image to Amazon ECR - loadgenerator
-    #   id: build-image-loadgenerator
-    #   env:
-    #     ECR_REPOSITORY_LOADGENERATOR: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG src/loadgenerator
-    #     docker push $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    # - name: Build, tag, and push image to Amazon ECR - paymentservice
-    #   id: build-image-paymentservice
-    #   env:
-    #     ECR_REPOSITORY_PAYMENTSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG src/paymentservice
-    #     docker push $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - currencyservice
+      id: build-image-currencyservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG src/currencyservice
+        docker push $ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_CURRENCYSERVICE/$ECR_REPOSITORY_CURRENCYSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
-    # - name: Build, tag, and push image to Amazon ECR - productcatalogservice
-    #   id: build-image-productcatalogservice
-    #   env:
-    #     ECR_REPOSITORY_PRODUCTCATALOGSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG src/productcatalogservice
-    #     docker push $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - emailservice
+      id: build-image-emailservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG src/emailservice
+        docker push $ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_EMAILSERVICE/$ECR_REPOSITORY_EMAILSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    # - name: Build, tag, and push image to Amazon ECR - recommendationservice
-    #   id: build-image-recommendationservice
-    #   env:
-    #     ECR_REPOSITORY_RECOMMENDATIONSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG src/recommendationservice
-    #     docker push $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - frontend
+      id: build-image-frontend
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG src/frontend
+        docker push $ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_FRONTEND/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Build, tag, and push image to Amazon ECR - loadgenerator
+      id: build-image-loadgenerator
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG src/loadgenerator
+        docker push $ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_LOADGENERATOR/$ECR_REPOSITORY_LOADGENERATOR:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Build, tag, and push image to Amazon ECR - paymentservice
+      id: build-image-paymentservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG src/paymentservice
+        docker push $ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_PAYMENTSERVICE/$ECR_REPOSITORY_PAYMENTSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
-    # - name: Build, tag, and push image to Amazon ECR - shippingservice
-    #   id: build-image-shippingservice
-    #   env:
-    #     ECR_REPOSITORY_SHIPPINGSERVICE: ${{ steps.login-ecr.outputs.registry }}
-    #     IMAGE_TAG: ${{ github.sha }}
-    #   run: |
-    #     # Build a docker container and
-    #     # push it to ECR so that it can
-    #     docker build -t $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG src/shippingservice
-    #     docker push $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG
-    #     echo "image=$ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+    - name: Build, tag, and push image to Amazon ECR - productcatalogservice
+      id: build-image-productcatalogservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG src/productcatalogservice
+        docker push $ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_PRODUCTCATALOGSERVICE/$ECR_REPOSITORY_PRODUCTCATALOGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Build, tag, and push image to Amazon ECR - recommendationservice
+      id: build-image-recommendationservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG src/recommendationservice
+        docker push $ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_RECOMMENDATIONSERVICE/$ECR_REPOSITORY_RECOMMENDATIONSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+
+    - name: Build, tag, and push image to Amazon ECR - shippingservice
+      id: build-image-shippingservice
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        docker build -t $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG src/shippingservice
+        docker push $ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG
+        echo "image=$ECR_REPOSITORY_SHIPPINGSERVICE/$ECR_REPOSITORY_SHIPPINGSERVICE:$IMAGE_TAG" >> $GITHUB_OUTPUT
