@@ -27,7 +27,7 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: 'true'
         vault.hashicorp.com/role: 'internal-app'
-        vault.hashicorp.com/secretdata.txt: 'internal/data/topsecret'
+        vault.hashicorp.com/secretdata.txt: 'internal/topsecret'
       labels:
         app: {{ .Values.adService.name }}
     spec:
