@@ -28,7 +28,7 @@ spec:
         app: {{ .Values.adService.name }}
     spec:
       {{- if .Values.serviceAccounts.create }}
-      serviceAccountName: {{ .Values.adService.name }}
+      serviceAccountName: {{ .Values.adService.saname }}
       {{- else }}
       serviceAccountName: default
       {{- end }}
