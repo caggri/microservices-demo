@@ -10,6 +10,7 @@ images:
 serviceAccounts:
   # Specifies whether service accounts should be created.
   create: false
+  createadservice: true
   # Annotations to add to the service accounts.
   annotations: {}
   # Annotations to add only for the cartservice app. This allows to follow the least privilege principle where only cartservice needs to connect to external database for example via Workload Identity.
