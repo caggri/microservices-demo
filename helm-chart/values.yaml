@@ -51,7 +51,7 @@ hpa:
 adService:
   create: true
   name: adservice
-  saname: internal-app
+  saname: vault/internal-app
   resources:
     requests:
       cpu: 200m
